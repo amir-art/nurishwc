@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 # GIS Pipeline — Извлечение объектов из космоснимков
-
-Учебный кейс NURIS: автоматическое выявление объектов по данным ДЗЗ
+Project: автоматическое выявление объектов по данным ДЗЗ
 с формированием ГИС-слоёв.
 
 ---
@@ -205,5 +203,4 @@ postprocess:
 5. Нет поддержки облачной маскировки.
 =======
 # nurishwc
-this project created for competition, related with gis/geo system, work by Amir Zhanganashev
->>>>>>> e50295165a8c2fb23c23161bb2256f2197ba08d5
+this project created for competition, related with gis/geo system, work by Amir Zhanganashev & Madi Kunkeev
