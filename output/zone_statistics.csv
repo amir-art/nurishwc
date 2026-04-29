@@ -1,0 +1,3 @@
+class,count,density_per_ha,mean_confidence,total_length_m,total_length_km,total_area_m2,total_area_ha,coverage_pct,mean_area_m2
+road,3064,1.169,61.0,3854137.9,3854.138,,,,
+water,1,0.0,70.4,,,3000.0,0.3,0.011,3000.0

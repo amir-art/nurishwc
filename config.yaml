@@ -1,0 +1,76 @@
+# config.yaml — конфигурация GIS Pipeline (NURIS учебный кейс)
+
+# ── Входные данные ────────────────────────────────────────────────────────────
+data:
+  image: "data/scene.tif"          # путь к GeoTIFF
+  aoi:   "data/aoi.geojson"        # контур AOI (опционально)
+  dem:   null                       # DEM (не используется в прототипе)
+
+satellite: "rgb"  # rgb | sentinel2 | landsat8 | default
+
+# ── Системы координат ─────────────────────────────────────────────────────────
+crs:
+  processing: "EPSG:32642"   # UTM 42N — метрические вычисления (Казахстан)
+  target:     "EPSG:4326"    # WGS84 — итоговые слои
+
+# ── Тайлинг ───────────────────────────────────────────────────────────────────
+tiling:
+  size:                256    # размер тайла в пикселях
+  overlap:              32    # перекрытие для избежания краевых эффектов
+  min_valid_px_ratio:  0.1    # минимальная доля ненулевых пикселей
+
+# ── Детекция ──────────────────────────────────────────────────────────────────
+detection:
+  enabled_classes:
+    - vegetation
+    - water
+    - building
+    - road
+
+  vegetation:
+    ndvi_threshold:   0.20
+    min_area_px:      50
+    max_area_px:      50000
+
+  water:
+    ndwi_threshold:   0.10
+    min_area_px:      30
+
+  building:
+    brightness_percentile: 80
+    min_area_px:           25
+    max_area_px:           8000
+    min_compactness:       0.15
+
+  road:
+    canny_low:            50
+    canny_high:           150
+    hough_threshold:      40
+    min_line_length_px:   30
+    max_line_gap_px:      10
+
+# ── Постобработка ─────────────────────────────────────────────────────────────
+postprocess:
+  min_confidence:      25.0
+  nms_iou_threshold:    0.4
+  min_area_m2:         10.0
+  min_length_m:         5.0
+  max_area_m2:      1000000.0
+  merge_touching:      true
+
+# ── Экспорт ───────────────────────────────────────────────────────────────────
+export:
+  crs:       "EPSG:4326"
+  shapefile: true
+  gpkg:      true
+
+# ── Оценка качества ───────────────────────────────────────────────────────────
+evaluation:
+  ground_truth:       null       # путь к GT GeoJSON или null
+  iou_threshold:      0.50
+  manual_sample_size: 50
+  random_seed:        42
+
+# ── Визуализация ──────────────────────────────────────────────────────────────
+visualization:
+  max_objects_per_plot: 5000

@@ -1,0 +1,21 @@
+{
+  "crs": "EPSG:4326",
+  "total_objects": 3065,
+  "date": "2026-04-27",
+  "source": "demo_almaty",
+  "classes": {
+    "road": {
+      "count": 3064,
+      "mean_confidence": 61.0,
+      "total_length_m": 3854137.9,
+      "total_length_km": 3854.138
+    },
+    "water": {
+      "count": 1,
+      "mean_confidence": 70.4,
+      "total_area_m2": 3000.0,
+      "mean_area_m2": 3000.0,
+      "total_area_ha": 0.3
+    }
+  }
+}

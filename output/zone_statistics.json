@@ -1,0 +1,23 @@
+{
+  "aoi_area_m2": 26214400.0,
+  "aoi_area_ha": 2621.44,
+  "total_objects": 3065,
+  "classes": {
+    "road": {
+      "count": 3064,
+      "density_per_ha": 1.169,
+      "mean_confidence": 61.0,
+      "total_length_m": 3854137.9,
+      "total_length_km": 3854.138
+    },
+    "water": {
+      "count": 1,
+      "density_per_ha": 0.0,
+      "mean_confidence": 70.4,
+      "total_area_m2": 3000.0,
+      "total_area_ha": 0.3,
+      "coverage_pct": 0.011,
+      "mean_area_m2": 3000.0
+    }
+  }
+}

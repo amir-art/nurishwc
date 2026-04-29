@@ -1,0 +1,102 @@
+2026-04-27 14:44:52,908 [INFO] main — === Шаг 1: Загрузка снимка ===
+2026-04-27 14:44:52,908 [INFO] pipeline.loader — Генерируем демо-снимок (синтетика Алматы)...
+2026-04-27 14:44:52,930 [INFO] pipeline.loader — Демо-снимок сохранён: output/demo_scene.tif
+2026-04-27 14:44:52,933 [INFO] pipeline.loader — Вычислены индексы: ['NDVI', 'NDWI']
+2026-04-27 14:44:52,933 [INFO] main — Снимок загружен: (512, 512) px, CRS=EPSG:32642, bands=['Red', 'Green', 'Blue', 'NIR']
+2026-04-27 14:44:52,933 [INFO] main — === Шаг 2: Разбивка на тайлы ===
+2026-04-27 14:44:52,933 [INFO] pipeline.tiler — Тайлинг: 512×512 px → 9 тайлов (256px, overlap=32px)
+2026-04-27 14:44:52,933 [INFO] main — Создано тайлов: 9
+2026-04-27 14:44:52,933 [INFO] main — === Шаг 3: Детекция объектов ===
+2026-04-27 14:44:52,933 [INFO] pipeline.detector — Детектор подключён: vegetation
+2026-04-27 14:44:52,933 [INFO] pipeline.detector — Детектор подключён: water
+2026-04-27 14:44:52,933 [INFO] pipeline.detector — Детектор подключён: building
+2026-04-27 14:44:52,933 [INFO] pipeline.detector — Детектор подключён: road
+2026-04-27 14:44:53,079 [INFO] main —   Обработано тайлов: 9/9, детекций: 3075
+2026-04-27 14:44:53,079 [INFO] main — Всего сырых детекций: 3075
+2026-04-27 14:44:53,079 [INFO] main — === Шаг 4: Постобработка ===
+2026-04-27 14:44:53,080 [INFO] pipeline.postprocess — После фильтра уверенности: 3066 (было 3075)
+2026-04-27 14:44:53,080 [INFO] pipeline.postprocess — После фильтра размера: 3066
+2026-04-27 14:44:53,080 [INFO] pipeline.postprocess — После NMS: 3065
+2026-04-27 14:44:53,081 [INFO] pipeline.postprocess — После слияния касающихся: 3065
+2026-04-27 14:44:53,093 [INFO] pipeline.postprocess — После геовалидации: 3065
+2026-04-27 14:44:53,098 [INFO] main — После постобработки: 3065 объектов
+2026-04-27 14:44:53,098 [INFO] main — === Шаг 5: Экспорт ===
+2026-04-27 14:44:53,794 [INFO] pyogrio._io — Created 3,065 records
+2026-04-27 14:44:53,794 [INFO] pipeline.exporter — GeoJSON сохранён: output/detections.geojson (3065 объектов)
+2026-04-27 14:44:53,834 [INFO] pyogrio._io — Created 3,064 records
+2026-04-27 14:44:53,835 [INFO] pipeline.exporter — GeoJSON сохранён: output/detections_road.geojson (3064 объектов)
+2026-04-27 14:44:53,837 [INFO] pyogrio._io — Created 1 records
+2026-04-27 14:44:53,838 [INFO] pipeline.exporter — GeoJSON сохранён: output/detections_water.geojson (1 объектов)
+2026-04-27 14:44:53,866 [INFO] pyogrio._io — Created 3,065 records
+2026-04-27 14:44:53,872 [INFO] pipeline.exporter — GeoPackage сохранён: output/detections.gpkg
+2026-04-27 14:44:53,902 [INFO] pyogrio._io — Created 3,064 records
+2026-04-27 14:44:53,904 [INFO] pyogrio._io — Created 1 records
+2026-04-27 14:44:53,905 [INFO] pipeline.exporter — Shapefile(s) сохранены: output/shapefile
+2026-04-27 14:44:53,906 [INFO] pipeline.exporter — Экспорт завершён: 3065 объектов в 6 файлов
+2026-04-27 14:44:53,906 [INFO] main —   GeoJSON: output/detections.geojson
+2026-04-27 14:44:53,906 [INFO] main —   GeoJSON_road: output/detections_road.geojson
+2026-04-27 14:44:53,906 [INFO] main —   GeoJSON_water: output/detections_water.geojson
+2026-04-27 14:44:53,906 [INFO] main —   GeoPackage: output/detections.gpkg
+2026-04-27 14:44:53,906 [INFO] main —   Shapefile: output/shapefile/detections.shp
+2026-04-27 14:44:53,906 [INFO] main —   Summary: output/summary.json
+2026-04-27 14:44:53,906 [INFO] main — === Шаг 6: Показатели по зонам ===
+2026-04-27 14:44:53,909 [INFO] main — Сводная таблица: output/zone_statistics.json
+2026-04-27 14:44:53,909 [INFO] main — === Шаг 7: Контрольная выборка (без GT) ===
+2026-04-27 14:44:53,910 [INFO] main — === Шаг 8: Визуализация ===
+2026-04-27 14:44:54,837 [INFO] pipeline.visualizer — Обзор сохранён: output/overview.png
+2026-04-27 14:44:55,630 [INFO] pipeline.visualizer — Карта класса road: output/class_road.png
+2026-04-27 14:44:55,791 [INFO] pipeline.visualizer — Карта класса water: output/class_water.png
+2026-04-27 14:44:56,072 [INFO] pipeline.visualizer — Карта плотности: output/density_map.png
+2026-04-27 14:44:56,072 [INFO] main — === Пайплайн завершён за 3.2с ===
+2026-04-27 14:44:56,072 [INFO] main — Результаты сохранены в: /Users/amir/Desktop/geopy/files (1)/output
+2026-04-27 16:13:56,257 [INFO] main — === Шаг 1: Загрузка снимка ===
+2026-04-27 16:13:56,257 [INFO] pipeline.loader — Генерируем демо-снимок (синтетика Алматы)...
+2026-04-27 16:13:56,288 [INFO] pipeline.loader — Демо-снимок сохранён: output/demo_scene.tif
+2026-04-27 16:13:56,291 [INFO] pipeline.loader — Вычислены индексы: ['NDVI', 'NDWI']
+2026-04-27 16:13:56,291 [INFO] main — Снимок загружен: (512, 512) px, CRS=EPSG:32642, bands=['Red', 'Green', 'Blue', 'NIR']
+2026-04-27 16:13:56,291 [INFO] main — === Шаг 2: Разбивка на тайлы ===
+2026-04-27 16:13:56,291 [INFO] pipeline.tiler — Тайлинг: 512×512 px → 9 тайлов (256px, overlap=32px)
+2026-04-27 16:13:56,291 [INFO] main — Создано тайлов: 9
+2026-04-27 16:13:56,291 [INFO] main — === Шаг 3: Детекция объектов ===
+2026-04-27 16:13:56,291 [INFO] pipeline.detector — Детектор подключён: vegetation
+2026-04-27 16:13:56,291 [INFO] pipeline.detector — Детектор подключён: water
+2026-04-27 16:13:56,291 [INFO] pipeline.detector — Детектор подключён: building
+2026-04-27 16:13:56,291 [INFO] pipeline.detector — Детектор подключён: road
+2026-04-27 16:13:56,461 [INFO] main —   Обработано тайлов: 9/9, детекций: 3075
+2026-04-27 16:13:56,461 [INFO] main — Всего сырых детекций: 3075
+2026-04-27 16:13:56,461 [INFO] main — === Шаг 4: Постобработка ===
+2026-04-27 16:13:56,462 [INFO] pipeline.postprocess — После фильтра уверенности: 3066 (было 3075)
+2026-04-27 16:13:56,462 [INFO] pipeline.postprocess — После фильтра размера: 3066
+2026-04-27 16:13:56,462 [INFO] pipeline.postprocess — После NMS: 3065
+2026-04-27 16:13:56,463 [INFO] pipeline.postprocess — После слияния касающихся: 3065
+2026-04-27 16:13:56,475 [INFO] pipeline.postprocess — После геовалидации: 3065
+2026-04-27 16:13:56,481 [INFO] main — После постобработки: 3065 объектов
+2026-04-27 16:13:56,481 [INFO] main — === Шаг 5: Экспорт ===
+2026-04-27 16:13:57,165 [INFO] pyogrio._io — Created 3,065 records
+2026-04-27 16:13:57,165 [INFO] pipeline.exporter — GeoJSON сохранён: output/detections.geojson (3065 объектов)
+2026-04-27 16:13:57,204 [INFO] pyogrio._io — Created 3,064 records
+2026-04-27 16:13:57,205 [INFO] pipeline.exporter — GeoJSON сохранён: output/detections_road.geojson (3064 объектов)
+2026-04-27 16:13:57,207 [INFO] pyogrio._io — Created 1 records
+2026-04-27 16:13:57,207 [INFO] pipeline.exporter — GeoJSON сохранён: output/detections_water.geojson (1 объектов)
+2026-04-27 16:13:57,234 [INFO] pyogrio._io — Created 3,065 records
+2026-04-27 16:13:57,241 [INFO] pipeline.exporter — GeoPackage сохранён: output/detections.gpkg
+2026-04-27 16:13:57,277 [INFO] pyogrio._io — Created 3,064 records
+2026-04-27 16:13:57,280 [INFO] pyogrio._io — Created 1 records
+2026-04-27 16:13:57,280 [INFO] pipeline.exporter — Shapefile(s) сохранены: output/shapefile
+2026-04-27 16:13:57,282 [INFO] pipeline.exporter — Экспорт завершён: 3065 объектов в 6 файлов
+2026-04-27 16:13:57,282 [INFO] main —   GeoJSON: output/detections.geojson
+2026-04-27 16:13:57,282 [INFO] main —   GeoJSON_road: output/detections_road.geojson
+2026-04-27 16:13:57,282 [INFO] main —   GeoJSON_water: output/detections_water.geojson
+2026-04-27 16:13:57,282 [INFO] main —   GeoPackage: output/detections.gpkg
+2026-04-27 16:13:57,282 [INFO] main —   Shapefile: output/shapefile/detections.shp
+2026-04-27 16:13:57,282 [INFO] main —   Summary: output/summary.json
+2026-04-27 16:13:57,283 [INFO] main — === Шаг 6: Показатели по зонам ===
+2026-04-27 16:13:57,286 [INFO] main — Сводная таблица: output/zone_statistics.json
+2026-04-27 16:13:57,287 [INFO] main — === Шаг 7: Контрольная выборка (без GT) ===
+2026-04-27 16:13:57,288 [INFO] main — === Шаг 8: Визуализация ===
+2026-04-27 16:13:58,231 [INFO] pipeline.visualizer — Обзор сохранён: output/overview.png
+2026-04-27 16:13:59,028 [INFO] pipeline.visualizer — Карта класса road: output/class_road.png
+2026-04-27 16:13:59,193 [INFO] pipeline.visualizer — Карта класса water: output/class_water.png
+2026-04-27 16:13:59,477 [INFO] pipeline.visualizer — Карта плотности: output/density_map.png
+2026-04-27 16:13:59,477 [INFO] main — === Пайплайн завершён за 3.2с ===
+2026-04-27 16:13:59,477 [INFO] main — Результаты сохранены в: /Users/amir/Desktop/geopy/files (1)/output

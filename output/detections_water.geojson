@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "detections_water",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "water_demo_almaty_003065", "class": "water", "confidence": 70.4, "source": "demo_almaty", "date": "2026-04-27", "length_m": null, "attr_angle_deg": null, "area_m2": 3000.0, "attr_mean_ndwi": 0.586 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 72.37873778288656, 43.508924151854586 ], [ 72.378712684580123, 43.50847472154306 ], [ 72.379453662462652, 43.508452798226045 ], [ 72.379478766247786, 43.508902228195481 ], [ 72.37873778288656, 43.508924151854586 ] ] ] } }
+]
+}
