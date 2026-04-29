@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GIS Pipeline — Извлечение объектов из космоснимков
 
 Учебный кейс NURIS: автоматическое выявление объектов по данным ДЗЗ
@@ -202,3 +203,7 @@ postprocess:
    Решение: использовать D-LinkNet или аналог.
 4. Прототип обрабатывает один снимок за раз (нет оценки изменений).
 5. Нет поддержки облачной маскировки.
+=======
+# nurishwc
+this project created for competition, related with gis/geo system, work by Amir Zhanganashev
+>>>>>>> e50295165a8c2fb23c23161bb2256f2197ba08d5
